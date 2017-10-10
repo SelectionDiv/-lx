@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>"认识视觉中国"   有奖问答活动</title>
+	<style>
+		*{
+			padding: 0;
+			margin:0;
+		}
+		body{
+			height: 100%;
+			background:#ddf4ff url(img/oldbg2-bg.jpg) repeat-x;
+			position: relative;
+			color:#6a6a6a;
+			/*background-size:cover;*/
+		}
+		.main{
+			width: 920px;
+			height: 100%;
+			margin:0px auto;		
+		}
+		a{
+			text-decoration: none;
+		}
+		header{
+			background: url(img/oldbg2.jpg) no-repeat;
+			padding-top: 105px;
+		}
+		.box{
+			background: white;
+			width: 920px;
+		}
+		.content{
+			width: 780px;
+			margin:0px auto;
+		}
+		.biaoti{
+			text-align: center;
+			line-height: 20px;
+		    padding: 40px 15px 30px;
+		}
+		.biaoti h1{
+			color: #19a8ee;
+			font-size: 24px !important;
+		    font-weight: bold;
+		    vertical-align: middle;
+		    padding: 15px 0;
+		    line-height: 24px;
+		}
+		.biaoti div{
+			margin: 15px 0 10px;
+		    background: #eff7ff;
+		    padding: 5px;
+		    text-align: left;
+		    border: 1px #dce4ed solid;
+		    font-size: 13px;
+		}
+		.biaoti div p{
+			color: #333;
+    		font-size: 14px;
+		}
+		.question{
+			margin:0px 30px;
+		}
+		.null{
+			width: 100%;
+			height: 30px;
+		}
+		.question-div{
+			margin:5px 0px 10px;
+			padding-bottom: 10px;
+			border-bottom:1px solid #efefef;
+			font-size: 15px
+			/*border:1px solid deeppink;*/
+		}
+		.Q1{
+			color:#444;
+			font-weight: bold;
+			line-height: 20px;
+		}
+		.Question-Selection{
+			margin:4px 0px 0px 25px;
+		}
+		textarea{
+			 width:436px;
+			 height:24px;
+		}
+		ul li{
+			width: 33%;
+			float:left;
+			list-style:none;
+			padding:10px 0px;
+		}
+		.special li{
+			width: 50%;
+		}
+		li:hover{
+			background: #efefef;
+			cursor:pointer;
+		}
+		.Question-Selection a{
+			background: url(img/radio.gif)no-repeat 0 2px;
+			display:inline-block;
+			width: 18px;
+			height: 16px;
+			float:left;
+			padding-bottom: 2px
+		}
+		.Question-Selection p{
+			float: left;
+		}
+		.clear{
+			clear:both;
+		}
+		.footer-button{
+			padding: 6px 0px 10px;
+		}
+		.footer-button div{
+			text-align: center;
+			margin:50px auto;
+		}
+		.footer-button input{
+			
+			padding:7px 28px;
+			background: #13a5ec;
+			border:1px solid #0492d6;
+			cursor:pointer;
+			color:white;
+			border-radius:5px;
+		}
+		.footer-solid{
+			font-size: 12px;
+			text-align: center;
+		}
+		.footer-solid div{
+			border-top:1px solid #bbb;
+			width: 98%;
+			margin:20px auto;
+			padding:20px 0px;
+		}
+		.footer-solid a{
+			color:#666;
+		}
+		.footer-solid a:hover{
+			color:#f90
+		}
+		.progress_bar{
+			position: absolute;
+			top:280px;
+			right:436px;
+			background: white;
+			width: 45px;
+			padding:5px;
+			text-align: center;
+			font-size: 12px;
+			font-weight: bold;
+		}
+		.progress_bar-box{
+			width: 50px;
+		}
+		.bar{
+			padding-left:16px;
+		}
+		.bar div{
+			background: url(img/bgProgressBg.gif)no-repeat 0 0;
+			border:1px solid #d6ebf7;
+			height: 120px;
+			width: 15px;
+		}
+	</style>
+	<script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<div class="main">
+		<header></header>
+		<div class="box">
+			<div class="content">
+				<div class="biaoti">
+					<h1>"认识视觉中国"有奖问答活动</h1>
+					<div>
+						<p><b>提示：</b>本问卷奖品由问卷发布者提供，问卷星不负责监督奖品发放过程。</p>
+					</div>
+				</div>
+				<div class="question">
+					<div class="question-div">
+						<div class="Q1">
+							<h4>Q1.您的姓名？<span style="color:red"> *</span></h4>					
+						</div>
+						<div class="Question-Selection">
+							<textarea></textarea>
+						</div>			
+					</div>
+					<div class="null"></div>
+					<div class="question-div">
+						<div class="Q1">
+							<h4>Q2.您的公司全称？<span style="color:red"> *</span></h4>					
+						</div>
+						<div class="Question-Selection">
+							<textarea name="Q1" id="Q1" cols="30" rows="10"></textarea>
+						</div>			
+					</div>
+					<div class="null"></div>
+					<div class="question-div">
+						<div class="Q1">
+							<h4>Q3.您的手机号？<span style="color:red"> *</span></h4>					
+						</div>
+						<div class="Question-Selection">
+							<textarea name="Q1" id="Q1" cols="30" rows="10"></textarea>
+						</div>			
+					</div>
+					<div class="null"></div>
+					<div class="question-div">
+						<div class="Q1">
+							<h4>Q4.您常用的收件邮箱、QQ号、微信号？(三选一)<span style="color:red"> *</span></h4>					
+						</div>
+						<div class="Question-Selection">
+							<textarea name="Q1" id="Q1" cols="30" rows="10"></textarea>
+						</div>			
+					</div>
+					<div class="null"></div>
+					<div class="question-div">
+						<div class="Q1">
+							<h4>Q5.视觉中国的前身是？<span style="color:red"> *</span></h4>		
+						</div>		
+						<div class="Question-Selection">
+							<div class="special">
+								<ul>
+									<li>
+										<a href="javascript:"></a><p>A.  华盖创意</p>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<a href="javascript:"></a><p>A.  华盖创意</p>
+									</li>
+								</ul>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="question-div">
+						<div class="Q1">
+							<h4>Q6.视觉中国的前身是？<span style="color:red"> *</span></h4>		
+						</div>		
+						<div class="Question-Selection">
+							<div>
+								<ul>
+									<li>
+										<a href="javascript:"></a><p>A.  华盖创意</p>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<a href="javascript:"></a><p>A.  华盖创意</p>
+									</li>
+								</ul>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="question-div">
+						<div class="Q1">
+							<h4>Q7.视觉中国的前身是？<span style="color:red"> *</span></h4>					
+						</div>		
+						<div class="Question-Selection">
+							<div>
+								<ul>
+									<li>
+										<a href="javascript:"></a><p>A.  华盖创意</p>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<a href="javascript:"></a><p>A.  华盖创意</p>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<a href="javascript:"></a><p>A.  华盖创意</p>
+									</li>
+								</ul>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="question-div">
+						<div class="Q1">
+							<h4>Q8.视觉中国的前身是？<span style="color:red"> *</span></h4>					
+						</div>		
+						<div class="Question-Selection">
+							<div class="special">
+								<ul>
+									<li>
+										<a href="javascript:"></a><p>A.  华盖创意</p>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<a href="javascript:"></a><p>A.  华盖创意</p>
+									</li>
+								</ul>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="question-div">
+						<div class="Q1">
+							<h4>Q9.视觉中国的前身是？<span style="color:red"> *</span></h4>					
+						</div>		
+						<div class="Question-Selection">
+							<div>
+								<ul>
+									<li>
+										<a href="javascript:"></a><p>A.  华盖创意</p>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<a href="javascript:"></a><p>A.  华盖创意</p>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<a href="javascript:"></a><p>A.  华盖创意</p>
+									</li>
+								</ul>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="question-div">
+						<div class="Q1">
+							<h4>Q10.视觉中国的前身是？<span style="color:red"> *</span></h4>					
+						</div>		
+						<div class="Question-Selection">
+							<div>
+								<ul>
+									<li>
+										<a href="javascript:"></a><p>A.  华盖创意</p>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<a href="javascript:"></a><p>A.  华盖创意</p>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<a href="javascript:"></a><p>A.  华盖创意</p>
+									</li>
+								</ul>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-button">
+					<div>
+						<input type="button" value="提交">
+					</div>					
+				</div>
+								
+			</div>
+			<div class="footer-solid">
+				<div><a href="" title="问卷星-专业的在线问卷调查、测评、投票平台">Powered By  <span style="color: #30a6e2">问卷星</span> </a></div>
+			</div>
+			<div class="progress_bar">
+				<div class="progress_bar-box">
+					<div><span style=";">  10%</span></div>
+					<div class="bar">
+						<div></div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+	
+</body>
+</html>

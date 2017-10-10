@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录-视觉中国</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		html{
+			width: 100%;
+			height: 100%;
+		}
+		body{
+			width: 100%;
+			height: 100%;
+			background:url(img/reg-bg.jpg) no-repeat ;
+			background-size: cover;	   
+		    position: absolute;
+		}
+		a{
+			text-decoration: none !important;
+		}
+		.wrap{
+			width: 362px;
+			margin:200px auto;
+			background: white;
+			box-shadow:0 0 16px #7f7581
+		}
+		.input{
+			padding:20px 40px 20px;
+		}
+		.biaoti{
+			height: 39px;
+		}
+		.biaoti div{
+			width: 50%;
+			float: left;
+			text-align:center;
+			cursor: pointer;
+		}
+		.biaoti div:nth-child(1){
+			background: white
+		}
+		.biaoti div:nth-child(2){
+			background: #cec6c5
+		}
+		.input input{
+			width: 100%;
+			height: 40px;
+			outline:none;
+
+			font-size: 12px;
+			border:1px solid #d9d9d9;
+		}
+		.button{
+			width: 100%;
+			height: 40px;
+			background: #f84949;
+			text-align: center;
+			color:white;
+			border:0px;
+			font-size: 18px;
+		}
+		.button-Zc{
+			background: #aaaaaa;
+			color:white;
+			width: 100%;
+			height: 40px;
+			text-align: center;
+			color:white;
+			border:0px;
+			font-size: 18px;
+			position: absolute;
+			top:0px;
+		}
+		form div:nth-child(1){
+			position: relative;
+		}
+		.div-btn{
+			position: relative;
+		}
+		.null{
+			width: 100%;
+			height: 35px;
+			background: white
+		}
+		.button:hover{
+			background: #dd3636;
+		}
+		.password-back input{
+			width: 15px;
+			height: 15px;
+			font-size: 12px;
+			font-weight:normal;
+		}
+		.password-back div{
+			display: inline-block;
+			font-size: 12px;
+		}
+		.password-back a:hover{
+			text-decoration: none;
+		}
+		.footer{
+			font-size: 12px;
+			margin-top:20px;
+			text-align: center;
+		}
+		.footer a:hover{
+			color:#23527c;
+		}
+	</style>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+	<script src="js/json-data.js"></script>
+	<script src="js/shujuku.js"></script>
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+</head>
+<body>
+	<div id="wrap" class="wrap">
+		<div class="biaoti">
+			<div id="denglu"><h4>登录</h4></div>			
+			<div id="zhuce"><h4>注册</h4></div>
+		</div>
+		<div class="input">
+			<img src="img/icon-shijue.svg" style=" display:block;width: 100px;height:57px;margin:0px auto 25px" alt="">
+			<form action="" autocomplete="off">
+				<div>
+					<input type="text" required4 placeholder="   请输入用户名/手机号/邮箱">
+					<input id="inp-one" style="position: absolute; top: 0px; display: none;" type="text" required4 placeholder="   请输入手机号/邮箱">
+				</div>
+				<div style="color: #f84949;text-align: right; font-size: 12px;margin-bottom:10px;">请输入规范的手机号码或邮箱地址</div>				
+				<input type="text" placeholder="   请输入密码">
+				<div style="color: #f84949;text-align: right; font-size: 12px;margin-bottom:10px;">密码最短6位</div>				
+				<input id="inp-two" style="display: none" type="text" placeholder="   请输入姓名">
+				<div class="div-btn">
+					<button id="btn" class="button">登录</button>
+					<button id="btn-two" class="button-Zc" style="display: none">下一步</button>
+				</div>
+				<div class="null"></div>
+				
+			</form>
+			<div class="password-back">
+				<label for=""><input type="checkbox">记住密码</label>
+				<div style="float:right"><a href="">忘记密码？</a></div>
+			</div>
+			<div id="footer" class="footer" style="display: none">
+				<p style="margin:0">创建一个用户意味同意用户服务条款及<a href="">隐私协议</a></p>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(function(){
+			var Dl = $("#denglu")
+			var Zc =$("#zhuce")
+			var btn =$("#btn")
+			console.log(Dl)
+			console.log(Zc)
+			Zc.click(function(){
+				$("#inp-one").css("display","block")
+				$("#inp-two").css("display","block")
+				$("#btn-two").css("display","block")
+				Dl.css("background-color","#cec6c5")
+				Zc.css("background-color","white")
+				$("title").html("用户注册-视觉中国")
+				$("#footer").css("display","block")
+			})
+			Dl.click(function(){
+				$("#inp-one").css("display","none")
+				$("#inp-two").css("display","none")
+				$("#btn-two").css("display","none")
+				Dl.css("background-color","white")
+				Zc.css("background-color","#cec6c5")
+				$("title").html("登录-视觉中国")
+				$("#footer").css("display","none")
+			})
+		})
+	</script>
+</body>
+</html>
